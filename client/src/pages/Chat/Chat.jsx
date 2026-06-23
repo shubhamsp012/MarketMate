@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
-import './Chat.css';
+import './chat.css';
 
 // Socket connection endpoint array configuration
 const socket = io('http://localhost:5000');
