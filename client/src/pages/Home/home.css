@@ -1,0 +1,216 @@
+/* Core Document System Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base Layout Wrapper */
+.landing-viewport {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Frame layout */
+.hero-block {
+  position: relative;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  padding: 8rem 1.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 1;
+}
+
+.hero-inner {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Badge styling */
+.pill-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  background-color: #111111;
+  color: #ffffff;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+/* Typography elements */
+.main-headline {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #111111;
+  margin-bottom: 1.5rem;
+}
+
+.dark-accent {
+  color: #666666;
+}
+
+.main-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555555;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+}
+
+/* Buttons Engine layout */
+.action-button-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-dark {
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+}
+
+.btn-dark:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+.btn-light {
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #dddddd;
+}
+
+.btn-light:hover {
+  background-color: #f5f5f5;
+  border-color: #bbbbbb;
+}
+
+/* Features Block section */
+.info-block {
+  background-color: #fafafa;
+  padding: 6rem 1.5rem;
+  flex-grow: 1;
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.block-headline {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.block-subparagraph {
+  font-size: 1.05rem;
+  color: #666666;
+  margin-bottom: 4rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards Layout elements */
+.cards-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.value-card:hover {
+  border-color: #111111;
+  transform: translateY(-2px);
+}
+
+.card-indicator {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #999999;
+  margin-bottom: 1rem;
+}
+
+.card-headline {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #111111;
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666666;
+}
+
+/* Standard clean Footer rules */
+.footer-block {
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.footer-inner p {
+  font-size: 0.85rem;
+  color: #999999;
+}
+
+/* Responsive Handling modifications */
+@media (max-width: 600px) {
+  .main-headline {
+    font-size: 2.5rem;
+  }
+  .hero-block {
+    padding: 5rem 1rem;
+  }
+}

@@ -1,0 +1,402 @@
+/* ==========================================================================
+   MARKETMATE PREMIUM REAL-TIME CHAT ENGINE SPECIFICATIONS (MONOCHROME THEME)
+   ========================================================================== */
+
+.chat-interface-viewport {
+  width: 100%;
+  height: calc(100vh - 70px); /* Adjusts fluidly right beneath the global navigation navbar */
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden; /* Fixes browser double scrolls errors */
+}
+
+.chat-interface-viewport *,
+.chat-interface-viewport *::before,
+.chat-interface-viewport *::after {
+  box-sizing: border-box;
+}
+
+.chat-dashboard-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT COMPONENT SIDEBAR: ACTIVE NEGOTIATION DESKS DESK LIST
+   ========================================================================== */
+.chat-rooms-sidebar {
+  width: 350px;
+  min-width: 350px;
+  border-right: 1px solid #e9ecef;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f1f3f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.02em;
+}
+
+.channels-count-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #f1f3f5;
+  color: #111111;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.rooms-stack-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Individual Channel Card Unit */
+.room-channel-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.room-channel-card:hover {
+  background-color: #f8f9fa;
+}
+
+/* 🚨 SELECTION STATES ACCENT: Inverts channel properties on focus click */
+.room-channel-card.active-channel-accent {
+  background-color: #111111;
+  border-color: #111111;
+}
+
+.room-channel-card.active-channel-accent h4 {
+  color: #ffffff;
+}
+
+.room-channel-card.active-channel-accent span {
+  color: #cccccc;
+}
+
+.room-channel-card.active-channel-accent strong {
+  color: #ffffff;
+}
+
+.room-channel-card.active-channel-accent .avatar-placeholder {
+  background-color: #222222;
+  color: #ffffff;
+  border: 1px solid #333333;
+}
+
+/* Profile Initials Sphere */
+.avatar-placeholder {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  background-color: #f1f3f5;
+  color: #111111;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e9ecef;
+}
+
+.room-meta-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.room-meta-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111111;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room-meta-info span {
+  font-size: 0.78rem;
+  color: #6c757d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room-meta-info strong {
+  color: #212529;
+}
+
+.empty-rooms-label {
+  font-size: 0.85rem;
+  color: #adb5bd;
+  text-align: center;
+  padding-top: 3rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RIGHT COMPONENT STREAMS: LIVE THREAD VIEWSTREAM PLATFORM
+   ========================================================================== */
+.chat-thread-stream {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  position: relative;
+}
+
+.thread-header-bar {
+  padding: 1.25rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.01);
+}
+
+.thread-header-bar h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.01em;
+}
+
+.item-tracker-tag {
+  font-size: 0.82rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Scrolling Grid Base Viewport */
+.messages-scroller-viewport {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: #fafafa;
+}
+
+/* Chat bubble structural alignment wrappers */
+.message-bubble-row {
+  display: flex;
+  width: 100%;
+}
+
+.row-alignment-right { 
+  justify-content: flex-end; 
+}
+
+.row-alignment-left { 
+  justify-content: flex-start; 
+}
+
+.message-bubble-payload {
+  max-width: 65%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.message-bubble-payload p {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* Monochromatic Bubble Specifications */
+.bubble-own-dark {
+  background-color: #111111;
+  color: #ffffff;
+  border-bottom-right-radius: 1px; /* Stylized speech tip alignment */
+}
+
+.bubble-external-light {
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #e9ecef;
+  border-bottom-left-radius: 1px;
+}
+
+.timestamp-tracker-label {
+  font-size: 0.65rem;
+  display: block;
+  text-align: right;
+  opacity: 0.55;
+  font-family: monospace;
+}
+
+/* ==========================================================================
+   FORM CONTROLS GATEWAY INTERFACE: MESSAGE SEND BAR
+   ========================================================================== */
+.message-input-gateway-bar {
+  padding: 1.25rem 2rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.message-input-gateway-bar input {
+  flex-grow: 1;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.92rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #111111;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.message-input-gateway-bar input:focus {
+  border-color: #111111;
+}
+
+.send-payload-btn {
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  padding: 0.85rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.send-payload-btn:hover { 
+  background-color: #333333; 
+  border-color: #333333;
+}
+
+/* Fallback Empty Placeholder Layout */
+.fallback-empty-thread-view {
+  margin: auto;
+  text-align: center;
+  max-width: 440px;
+  padding: 2rem;
+  color: #adb5bd;
+}
+
+.fallback-empty-thread-view span { 
+  font-size: 3.5rem; 
+  display: block; 
+  margin-bottom: 1.25rem; 
+}
+
+.fallback-empty-thread-view h3 { 
+  color: #111111; 
+  margin: 0 0 0.5rem 0; 
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.fallback-empty-thread-view p { 
+  font-size: 0.9rem; 
+  line-height: 1.6; 
+  color: #6c757d;
+}
+
+/* Live Async Fetch Spinners Network Indicators */
+.chat-loading-viewport {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #6c757d;
+  background-color: #ffffff;
+}
+
+.chat-loading-viewport .spinner {
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #111111;
+  border-radius: 50%;
+  animation: spinChatGrid 0.75s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spinChatGrid {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM BREAKPOINTS ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .chat-rooms-sidebar {
+    width: 80px;
+    min-width: 80px;
+  }
+  
+  .sidebar-header h3, 
+  .channels-count-badge, 
+  .room-meta-info {
+    display: none; /* Collapses names streams into compact badge views on mobile viewports */
+  }
+  
+  .sidebar-header {
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .room-channel-card {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .message-bubble-payload {
+    max-width: 85%;
+  }
+
+  .thread-header-bar {
+    padding: 1rem;
+  }
+
+  .messages-scroller-viewport {
+    padding: 1rem;
+  }
+
+  .message-input-gateway-bar {
+    padding: 1rem;
+  }
+}

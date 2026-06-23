@@ -1,0 +1,388 @@
+/* ==========================================================================
+   MARKETMATE PREMIUM DASHBOARD LOGIC CSS MAPPINGS
+   ========================================================================== */
+
+.dashboard-viewport {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #fafafa;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* 🚨 UPGRADED FLEX CONTAINER: Positions search input in front of title text */
+.dashboard-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  text-align: left;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.header-meta {
+  flex: 1;
+  min-width: 280px;
+}
+
+.header-meta h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111111;
+  margin: 0.5rem 0;
+}
+
+.header-meta p {
+  font-size: 0.95rem;
+  color: #666666;
+  margin: 0;
+}
+
+.role-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background-color: #111111;
+  color: #ffffff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   INLINE COMPACT COMPONENT: SEARCH BOX ARRANGEMENTS
+   ========================================================================== */
+.dashboard-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.compact-header-search {
+  max-width: 320px; /* Small layout alignment block size */
+}
+
+.dashboard-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem; 
+  font-size: 0.88rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #111111;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-search-input:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.05);
+}
+
+/* Unicode tracking symbol position configuration layer */
+.dashboard-search-wrapper::before {
+  content: "🔍"; 
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #888888;
+  pointer-events: none;
+}
+
+.divider-line {
+  border: 0;
+  height: 1px;
+  background-color: #eeeeee;
+  margin-bottom: 3rem;
+}
+
+/* Loading Spin Rules */
+.dashboard-loading {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #eeeeee;
+  border-top: 3px solid #111111;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Grid Layout Engine */
+.products-grid-system {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Premium Card Blocks */
+.product-premium-card {
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+}
+
+.product-premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  border-color: #dddddd;
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.product-media-frame {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-premium-card:hover .product-media-frame {
+  transform: scale(1.04);
+}
+
+.media-fallback-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaaaaa;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.category-tag-indicator {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  color: #111111;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #eeeeee;
+  text-transform: uppercase;
+}
+
+.product-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-title-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.product-description-snippet {
+  font-size: 0.88rem;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.seller-attribution {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: #999999;
+  padding-top: 0.75rem;
+}
+
+.seller-attribution span {
+  color: #444444;
+  font-weight: 600;
+}
+
+.product-card-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.price-matrix {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #999999;
+  letter-spacing: 0.05em;
+}
+
+.price-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111111;
+}
+
+.flat-buy-btn,
+.flat-manage-shortcut-btn {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flat-buy-btn {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.flat-buy-btn:hover {
+  background-color: #333333;
+}
+
+.empty-state-card {
+  padding: 5rem 2rem;
+  border: 1px dashed #cccccc;
+  border-radius: 8px;
+  color: #666666;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* Breakpoints Configuration Overrides */
+@media (max-width: 768px) {
+  .dashboard-header-block {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+  .compact-header-search {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-viewport {
+    padding: 2rem 1rem;
+  }
+}
+.dashboard-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.header-meta {
+  flex: 1;
+  width: 100%;
+}
+
+.header-meta h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111111;
+  margin: 0.5rem 0;
+}
+
+.header-meta p {
+  font-size: 0.95rem;
+  color: #666666;
+  margin: 0 0 1.25rem 0; /* Created a padding baseline beneath community string */
+}
+
+/* SEARCH MODULE ATTRIBUTES ARRAY CONTAINER */
+.dashboard-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.compact-header-search {
+  max-width: 340px; /* Perfectly sized box for inline layout alignment */
+}
+
+.dashboard-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem; 
+  font-size: 0.88rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #111111;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.dashboard-search-input:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.05);
+}
+
+.dashboard-search-wrapper::before {
+  content: "🔍"; 
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #888888;
+  pointer-events: none;
+}
+
+.divider-line {
+  border: 0;
+  height: 1px;
+  background-color: #eeeeee;
+  margin-bottom: 3rem;
+}
+/* ... Keep the rest of your original grid and card styles unchanged ... */

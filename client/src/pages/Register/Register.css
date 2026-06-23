@@ -1,0 +1,273 @@
+/* Base Full Page Layout Configuration */
+.split-viewport {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* =========================================
+   LEFT SIDE: BRAND SECTION
+   ========================================= */
+.brand-side {
+  position: relative;
+  width: 45%;
+  background-color: #111111;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 1;
+}
+
+.brand-content {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 4rem;
+}
+
+.logo span {
+  color: #666666;
+}
+
+.brand-headline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.brand-subtext {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #aaaaaa;
+  margin-bottom: 4rem;
+}
+
+.mini-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 1px solid #222222;
+  padding-top: 2rem;
+}
+
+.feature-item {
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+.feature-item strong {
+  color: #ffffff;
+  margin-right: 0.5rem;
+}
+
+/* =========================================
+   RIGHT SIDE: FORM SECTION
+   ========================================= */
+.form-side {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-header {
+  margin-bottom: 2.5rem;
+}
+
+.form-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111111;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #666666;
+  font-size: 0.95rem;
+}
+
+/* Form inputs & structure */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+.field-group input,
+.custom-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #111111;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.field-group input:focus,
+.custom-select:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Dropdown arrow */
+.custom-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.9rem;
+}
+
+/* Button style */
+.submit-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #333333;
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.form-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.form-footer p {
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.form-footer a {
+  color: #111111;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile view override)
+   ========================================= */
+@media (max-width: 900px) {
+  .split-viewport {
+    flex-direction: column;
+  }
+  
+  .brand-side {
+    width: 100%;
+    padding: 3rem 1.5rem;
+  }
+  
+  .logo {
+    margin-bottom: 1.5rem;
+  }
+  
+  .brand-subtext, .mini-features {
+    display: none; /* Mobile par clean rakhne ke liye left data hide kiya */
+  }
+  
+  .form-side {
+    width: 100%;
+    padding: 3rem 1.5rem;
+  }
+}
+/* ==========================================================================
+   UPDATED MODULE: ADDRESS TEXTAREA FIELD MATRIX
+   ========================================================================== */
+
+.register-form .field-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #111111;
+  outline: none;
+  font-family: inherit;
+  line-height: 1.5;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Match the exact high-contrast black focus boundary used on inputs */
+.register-form .field-group textarea:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.05);
+}
+
+/* Dark theme/high contrast text placeholder adjustment */
+.register-form .field-group textarea::placeholder {
+  color: #aaaaaa;
+  font-size: 0.88rem;
+}

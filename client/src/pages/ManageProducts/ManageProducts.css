@@ -1,0 +1,171 @@
+.manage-viewport {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #fafafa;
+}
+
+.manage-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.manage-header-block h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111111;
+  margin: 0 0 0.5rem 0;
+}
+
+.manage-header-block p {
+  font-size: 0.95rem;
+  color: #666666;
+  margin: 0;
+}
+
+.manage-table-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+
+.manage-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.manage-table th {
+  background-color: #fafafa;
+  color: #111111;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #eeeeee;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.manage-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f5f5f5;
+  vertical-align: middle;
+}
+
+.table-img-container {
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eeeeee;
+}
+
+.table-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-img-text {
+  font-size: 0.7rem;
+  color: #aaaaaa;
+  font-weight: 600;
+}
+
+.product-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.prod-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.prod-desc {
+  font-size: 0.85rem;
+  color: #777777;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.table-cat-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #f0f0f0;
+  color: #333333;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.prod-price {
+  font-weight: 700;
+  color: #111111;
+  font-size: 0.95rem;
+}
+
+.table-action-cluster {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.table-btn-edit, .table-btn-delete {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.table-btn-edit {
+  background-color: transparent;
+  color: #111111;
+  border: 1px solid #111111;
+}
+
+.table-btn-edit:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.table-btn-delete {
+  background-color: transparent;
+  color: #df2c2c;
+  border: 1px solid #df2c2c;
+}
+
+.table-btn-delete:hover {
+  background-color: #df2c2c;
+  color: #ffffff;
+}
+
+.manage-loading {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+}

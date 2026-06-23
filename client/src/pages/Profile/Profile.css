@@ -1,0 +1,548 @@
+/* ==========================================================================
+   MARKETMATE PREMIUM PROFILE MATRIX - FULLPAGE LAYOUT
+   ========================================================================== */
+
+.profile-fullpage-viewport {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.profile-dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR LAYOUT STYLES */
+.profile-sidebar-node {
+  width: 320px;
+  background-color: #ffffff;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.sidebar-identity-card {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.profile-avatar-sphere {
+  width: 80px;
+  height: 80px;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+}
+
+.user-title-h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0 0 0.5rem 0;
+}
+
+.user-role-chip {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.user-email-meta {
+  font-size: 0.88rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* LINK ELEMENT ACTION MENUS */
+.sidebar-action-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.sidebar-action-menu h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #adb5bd;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-link-btn {
+  display: block;
+  padding: 0.85rem 1rem;
+  color: #495057;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link-btn:hover {
+  background-color: #f1f3f5;
+  color: #111111;
+}
+
+.sidebar-link-btn.active-accent {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.sidebar-link-btn.generic-back {
+  margin-top: auto;
+  border: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.profile-logout-trigger-flat {
+  width: 100%;
+  background-color: #fff1f1;
+  border: 1px solid #ffe3e3;
+  color: #dc3545;
+  padding: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.profile-logout-trigger-flat:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+/* MAIN STREAM DATA SHOW PANEL */
+.profile-main-content-stream {
+  flex-grow: 1;
+  padding: 3rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.data-ledger-wrapper {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.ledger-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f1f3f5;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.ledger-header-row h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111111;
+}
+
+.row-count-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  background-color: #e8f4fd;
+  color: #1d88e5;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+}
+
+.ledger-items-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   🚨 FIXED MODULES: IMAGE CONTAINERS AND CARD STRUCTURES ADJUSTMENTS
+   ========================================================================== */
+.ledger-row-card.detailed-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #f1f3f5;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  gap: 1.5rem;
+}
+
+.card-main-info-segment {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+/* Rigid Frame Dimension Constraint for Object Thumbnails */
+.order-item-thumbnail {
+  width: 70px;
+  height: 70px;
+  min-width: 70px; /* Prevent shrinking inside flex layers */
+  min-height: 70px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-item-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio within bounding limits */
+  display: block;
+}
+
+.fallback-box {
+  font-size: 0.65rem;
+  color: #adb5bd;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem;
+}
+
+.order-identity-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #868e96;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.15rem;
+}
+
+.item-details-block h4 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+.meta-specs-row {
+  font-size: 0.85rem;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.divider-dot {
+  color: #dee2e6;
+}
+
+.item-actions-block {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pricing-manifest {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.text-alignment-right {
+  text-align: right;
+}
+
+.price-tag-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111111;
+}
+
+.payment-badge-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 0.25rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.select-dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.select-dropdown-wrapper label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #adb5bd;
+}
+
+.status-select-dropdown {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+}
+
+/* DROP-DOWN & STATIC BADGE COLOR SPECS MATRICES */
+.status-select-dropdown.pending, .static-status-badge.status-pending {
+  background-color: #fff9db;
+  color: #f59f00;
+  border-color: #ffe066;
+}
+
+.status-select-dropdown.shipped, .static-status-badge.status-shipped {
+  background-color: #e7f5ff;
+  color: #1c7ed6;
+  border-color: #a5d8ff;
+}
+
+.status-select-dropdown.delivered, .static-status-badge.status-delivered {
+  background-color: #ebfbee;
+  color: #2b8a3e;
+  border-color: #b2f2bb;
+}
+
+.static-status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.empty-ledger-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #868e96;
+  border: 2px dashed #f1f3f5;
+  border-radius: 6px;
+}
+
+.feed-sync-spinner {
+  text-align: center;
+  padding: 8rem 0;
+  color: #6c757d;
+}
+
+/* TAB COMPONENT DECORATION RULES */
+.sidebar-tab-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0.85rem 1rem;
+  color: #495057;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.sidebar-tab-btn:hover {
+  background-color: #f1f3f5;
+  color: #111111;
+}
+
+.sidebar-tab-btn.active-accent {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* INTERIOR INFO MATRIX EMBEDDED SHEET */
+.profile-info-grid-embedded {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.info-row-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+}
+
+.row-item-label {
+  font-size: 0.88rem;
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.row-item-value {
+  font-size: 1rem;
+  color: #111111;
+}
+
+.role-badge-pill {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* TRANSITION METRICS FOR CONTENT SHIFT */
+.info-section-fade {
+  animation: profileSectionFadeIn 0.3s ease-in-out;
+}
+
+@keyframes profileSectionFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 991px) {
+  .ledger-row-card.detailed-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .item-actions-block {
+    justify-content: space-between;
+    border-top: 1px dashed #e9ecef;
+    padding-top: 1rem;
+  }
+}
+/* ==========================================================================
+   NEW MODULE ADDITIONS: PROFILE FORM EDIT SYSTEM RULES
+   ========================================================================== */
+
+.profile-edit-trigger-btn {
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-edit-trigger-btn:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+.profile-edit-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.edit-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.edit-input-group label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #495057;
+  letter-spacing: 0.02em;
+}
+
+.edit-input-group input, 
+.edit-input-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #111111;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.edit-input-group input:focus, 
+.edit-input-group textarea:focus {
+  border-color: #111111;
+}
+
+.edit-actions-block-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.save-metrics-btn {
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  padding: 0.75rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-metrics-btn:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+.cancel-edit-btn {
+  background-color: transparent;
+  color: #495057;
+  border: 1px solid #ced4da;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-edit-btn:hover {
+  background-color: #f1f3f5;
+  color: #111111;
+}

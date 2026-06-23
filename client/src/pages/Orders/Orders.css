@@ -1,0 +1,160 @@
+/* ==========================================================================
+   MARKETMATE PREMIUM ORDERS LEDGER GRID SYSTEM - BLACK & WHITE CONTEXT
+   ========================================================================== */
+
+.orders-fullpage-container {
+  min-height: 90vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header Action Banner Grid */
+.orders-page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #111111; /* Clean high-contrast rule */
+}
+
+.orders-page-header h1 {
+  color: #111111;
+  letter-spacing: -0.03em;
+}
+
+.orders-page-header p {
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
+
+/* Navigation Accent Button Matrix */
+.back-profile-btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #111111 !important;
+}
+
+.back-profile-btn:hover {
+  background-color: #333333 !important;
+  transform: translateY(-1px);
+}
+
+/* Primary Content Ledger Stack */
+.ledger-items-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Premium Row Component Architecture */
+.ledger-row-card.detailed-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+}
+
+.ledger-row-card.detailed-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  border-color: #111111 !important; /* Emphasize active block on focus */
+}
+
+/* Media Thumbnail Container Blocks */
+.order-item-thumbnail {
+  border: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  transition: opacity 0.2s ease;
+}
+
+.ledger-row-card.detailed-card:hover .order-item-thumbnail {
+  opacity: 0.95;
+}
+
+/* Select Control Element Dropdown Matrix (Merchant Desk) */
+.ledger-row-card select {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  border: 1px solid #111111 !important;
+  border-radius: 4px !important;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ledger-row-card select:focus {
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1);
+}
+
+/* Static Badge Metrics Allocation (Buyer Desk) */
+.ledger-row-card span[style*="background"] {
+  border-radius: 4px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+/* Interactive Network Sync Spinner Rules */
+.orders-page-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+}
+
+.orders-page-loading .spinner {
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #111111;
+  border-radius: 50%;
+  animation: spinOrderLedger 0.75s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spinOrderLedger {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive constraints breakpoints adjustments layout */
+@media (max-width: 768px) {
+  .orders-fullpage-container {
+    padding: 1.5rem !important;
+  }
+  
+  .orders-page-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1.25rem;
+  }
+  
+  .back-profile-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .ledger-row-card.detailed-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+  }
+  
+  .ledger-row-card.detailed-card > div:nth-child(2) {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-top: 1px dashed #eeeeee;
+    padding-top: 1rem;
+  }
+}
